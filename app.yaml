@@ -1,0 +1,15 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /asset
+  static_dir: asset
+
+- url: /(.+\.(ico|png|jpg|jpeg|gif|js|css))
+  static_files: \1
+  upload: (.+\.(ico|png|jpg|jpeg|gif|js|css))
+
+- url: .*
+  static_files: index.html
+  upload: index.html
